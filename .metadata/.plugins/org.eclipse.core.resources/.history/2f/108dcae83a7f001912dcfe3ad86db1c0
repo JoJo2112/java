@@ -1,0 +1,72 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Heapsort {
+
+	public static void main(String[] args) {
+		
+
+		List<Integer> test = new ArrayList<Integer>();
+		test.add(5);
+		test.add(2);
+		test.add(8);
+		sort(test);
+		
+		for(int i = 0; i < test.size(); i++) {
+			System.out.println(test.get(i));
+		}
+
+	}
+	
+	private static int size;
+	
+	public static <T extends Comparable<? super T> > void sort(List<T> array) {
+	       
+		size = array.size();
+		
+		BuildHeap(array);
+		for(int i = size; i > 0; i--) {
+			T temp = array.get(1);
+			array.set(1, array.get(i));
+			array.set(i, temp);
+			size--;
+			Heapify(array, 1, size);
+		}
+		
+		
+	}
+	
+	private static <T extends Comparable<? super T> > void BuildHeap(List<T> array) {
+		
+		for(int i = array.size()/2; i > 0; i--) {
+			Heapify(array,i,size);
+		}
+	}
+
+	private static <T extends Comparable<? super T> > void Heapify(List<T> array, int i, int n) {
+		
+		int left = 2 * i;
+		int right = 2 * n + 1;
+		int max;
+		
+		if(left <= array.size() && array.get(left).compareTo(array.get(i)) > 0) {
+			max = left;
+		}
+		else {
+			max = i;
+		}
+		
+		if(right <= array.size() && array.get(right).compareTo(array.get(max)) > 0) {
+			max = right;
+		}
+		
+		if(max != i) {
+			T temp = array.get(i);
+			array.set(i, array.get(max));
+			array.set(max, temp);
+			Heapify(array,max,size);
+		}
+		
+	}
+	
+}

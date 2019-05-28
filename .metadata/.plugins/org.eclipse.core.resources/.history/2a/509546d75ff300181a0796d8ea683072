@@ -1,0 +1,15 @@
+
+public class Memory {
+
+	public static void main(String[] args) {
+		
+		char[] memory = {'A','r','t','i','s','t'};
+		int i = 0;
+		while(i < memory.length) {
+			System.out.println(memory[++i]);
+		}
+		
+
+	}
+
+}

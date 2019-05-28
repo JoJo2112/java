@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Memory {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		char[] memory = {'A','B','A','B','C','C'};
+		boolean[] aufgedeckt = new boolean[memory.length];
+		int mschleife = 0;
+		
+		while(mschleife < memory.length) {
+			System.out.println("Indizes der Spielkarten:");
+			int schleife = 0;
+			int index1 = scan.nextInt();
+			int index2 = scan.nextInt();
+			
+			
+			if(memory[index1] == memory[index2]) {
+				aufgedeckt[index1] = true;
+				aufgedeckt[index2] = true;
+			}
+			
+
+			while(schleife < memory.length) {
+				if(aufgedeckt[schleife]){
+					System.out.print(memory[schleife]);
+					schleife++;
+				}
+				else {
+					System.out.print("*");
+					schleife++;
+				}
+			}
+			
+			System.out.println("");
+			int leerzeichen = 0;
+			while(leerzeichen < memory.length) {
+				if(leerzeichen == index1 || leerzeichen == index2) {
+					System.out.print("^");
+				}
+				else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println("");
+		}
+	}
+}

@@ -1,7 +1,6 @@
 import java.util.List;
 
-public abstract class Heapsort {
-	
+public class Heapsort {
 	
 	public static <T extends Comparable<? super T> > void sort(List<T> array) {
 		

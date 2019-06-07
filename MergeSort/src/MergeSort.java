@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 public class MergeSort {
 	
-	public static long laufzeit = 0;
-	
 	public static <T extends Comparable<? super T>> void sort(List<T> list) {
 		
 		if(list.size() == 1) {
@@ -16,6 +14,7 @@ public class MergeSort {
 		else {
 			List<T> neueListe = new ArrayList<T>();
 			neueListe = mergesort(list);
+			System.out.println("test");
 			list.clear();
 			list.addAll(neueListe);
 		}
@@ -32,11 +31,9 @@ public class MergeSort {
 		else {
 			for(int i = 0; i < (list.size()/2); i++) {
 				linkeListe.add(list.get(i));
-				laufzeit++;
 			}
 			for(int i = (list.size()/2); i < list.size(); i++) {
 				rechteListe.add(list.get(i));
-				laufzeit++;
 			}
 		}
 		
@@ -59,19 +56,16 @@ public class MergeSort {
 				neueListe.add(rechteListe.get(0));
 				rechteListe.remove(0);
 			}
-			laufzeit++;
 		}
 		
 		while(linkeListe.size() > 0) {
 			neueListe.add(linkeListe.get(0));
 			linkeListe.remove(0);
-			laufzeit++;
 		}
 		
 		while(rechteListe.size() > 0) {
 			neueListe.add(rechteListe.get(0));
 			rechteListe.remove(0);
-			laufzeit++;
 		}
 		return neueListe;
 

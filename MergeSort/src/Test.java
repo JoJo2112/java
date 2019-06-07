@@ -7,10 +7,9 @@ public class Test {
 
 	public static void main(String[] args) throws IOException {
 		
-		ArrayList<Integer> list = MergeSort.readFile("50.txt");
+		ArrayList<Integer> list = MergeSort.readFile("1000000.txt");
 		MergeSort.sort(list);
 		toFile(list);
-		System.out.println(MergeSort.laufzeit);
 		
 	}
 	

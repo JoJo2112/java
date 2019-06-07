@@ -7,12 +7,13 @@ public class Test {
 
 	public static void main(String[] args) throws IOException {
 		
-		ArrayList<Integer> list = InsertionSort.readFile("100000.txt");
+		ArrayList<Integer> list = InsertionSort.readFile("1000000.txt");
 		InsertionSort.sort(list);
 		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
+		System.out.println(InsertionSort.laufzeit);
 		
 	}
 	

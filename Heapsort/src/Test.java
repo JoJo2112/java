@@ -9,12 +9,10 @@ import java.util.Scanner;
 public class Test {
 public static void main(String[] args) throws IOException {
 		
-		ArrayList<Integer> list = readFile("100000.txt");
+		ArrayList<Integer> list = readFile("1000000.txt");
 		Heapsort.sort(list);
 		
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i));
-		}
+		toFile(list);
 		
 	}
 	

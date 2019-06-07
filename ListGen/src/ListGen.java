@@ -7,11 +7,11 @@ public class ListGen {
 
 	public static void main(String[] args) throws IOException {
 		
-		PrintWriter writer = new PrintWriter(new FileWriter("50.txt")); 
+		PrintWriter writer = new PrintWriter(new FileWriter("1000000.txt")); 
 		Random generator = new Random();
 		
-		for(int i = 0; i < 50; i++) {
-			writer.println(generator.nextInt(100));
+		for(int i = 0; i < 1000000; i++) {
+			writer.println(generator.nextInt(1000000));
 		}
 		
 		writer.close();
